@@ -6,9 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
- <com.jz.myapplication.Flower
-     android:id="@+id/flower"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"/>
+<!--    <com.jz.myapplication.Flower-->
+<!--        android:id="@+id/flower"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击开始" />
+
+    <RelativeLayout
+        android:id="@+id/rl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button"></RelativeLayout>
 
 </RelativeLayout>

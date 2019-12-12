@@ -24,8 +24,8 @@ let startHeartAnimation = function () {
       heart.push(bloom);
       // console.error(bloom) 
       createRandomBloom(bloom[0], bloom[1]);
-      clearInterval(animationTimer);
-      return
+      // clearInterval(animationTimer);
+      // return
     }
     if (angle >= 30) {
       clearInterval(animationTimer);

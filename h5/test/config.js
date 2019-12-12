@@ -5,7 +5,7 @@ Config = {
   max: 15
  },
  petalStretch: {
-  min: 1,
+  min: 0.1,
   max: 3
  },
  growFactor: {
@@ -13,8 +13,8 @@ Config = {
   max: 1
  },
  bloomRadius: {
-  min: 20,
-  max: 30
+  min: 8,
+  max: 10
  },
  density: 10,
  growSpeed: 1000 / 60,
