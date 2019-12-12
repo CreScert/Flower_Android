@@ -1,0 +1,16 @@
+app/build/
+Aliyunplayer/player_demo/build/
+build/
+.idea/
+.gradle/
+cms-android-grrb.iml
+app/release/
+taishanCompress/taishanCompress.iml
+xrecyclerview/xrecyclerview.iml
+AliyunPusher/pusher_core/AliyunPusher-pusher_core.iml
+AliyunPusher/pusher_demo/AliyunPusher-pusher_demo.iml
+Aliyunplayer/player_demo/Aliyunplayer-player_demo.iml
+app/cms-android-grrb-app.iml
+loadingLibrary/cms-android-grrb-loadingLibrary.iml
+*.iml
+local.properties
