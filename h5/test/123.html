@@ -1,0 +1,57 @@
+<!DOCTYPE html
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<!-- <script type="text/javascript" src="garden_dev.js"></script> -->
+<script type="text/javascript" src="mj.js"></script>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="Garden.js"></script>
+
+<body>
+
+ <button class="start">点击开始</button>
+ <div id="loveHeart">
+  <canvas id="garden"></canvas>
+ </div>
+
+ <canvas id="test">
+
+
+ </canvas>
+
+
+</body>
+<script>
+
+ var offsetX = 0;
+ var offsetY = 0;
+
+ $(".start").click(function () {
+  offsetX = $("#loveHeart").width() / 2;
+  offsetY = getHeartPoint(10)[1];
+  let arr = new Array();
+  startHeartAnimation();
+ })
+</script>
+
+
+<style>
+ .start {
+  width: 100px;
+  height: 100px;
+ }
+
+ #loveHeart {
+  width: 500px;
+  height: 500px;
+ }
+
+ .test {
+  width: 100px;
+  height: 100px;
+ }
+</style>
+
+</html>
