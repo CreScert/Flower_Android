@@ -150,7 +150,7 @@ public class FlowerUtils {
     // 获取心的缩放比例
     public static double getScaleHeart(int screenHeight) {
         // 481
-        return screenHeight * 37.24 / 1080 ;
+        return screenHeight  * 37.24 / 1080 ;
     }
 
 

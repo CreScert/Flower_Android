@@ -55,9 +55,6 @@ public class Garden {
         }
     }
 
-    public void startAnimation(){
-
-    }
 
 
 
@@ -107,10 +104,11 @@ public class Garden {
         final double[] angle = {10};
         final ArrayList<PointF> heart = new ArrayList<>();
 
-        final double scaleHeart = getScaleHeart((int) getScreenHeight(view.getContext()));
+        final double scaleHeart = getScaleHeart((int) getScreenHeight(view.getContext()))/3;
+
         PointF minPointF = getHeartPoint2(pointCircle / 2, scaleHeart);
         final float offsetX = getScreenWidth(view.getContext()) / 2;
-        final float offsetY = (getScreenHeight(view.getContext()) + minPointF.y);
+        final float offsetY = (getScreenHeight(view.getContext()) / 2 + minPointF.y);
 
         new Thread(new Runnable() {
             @Override

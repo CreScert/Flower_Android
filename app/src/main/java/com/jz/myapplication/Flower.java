@@ -44,9 +44,8 @@ public class Flower extends View {
      * 开始摆心形的花瓣
      */
     public void startHeartFlower() {
+
         final Garden mGarden =  new Garden();
-
-
         mGarden.startHeartAnimation(Flower.this, new FlowerUtils.OnCreateBloomListener() {
             @Override
             public void onCreateBloom(PointF pointF) {

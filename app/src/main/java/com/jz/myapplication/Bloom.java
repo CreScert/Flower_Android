@@ -69,6 +69,7 @@ public class Bloom {
     }
 
     public void draw(){
+        if(null == canvas) return;
         canvas.save();
         Petal p;
         canvas.translate(this.pointF.x,this.pointF.y);
