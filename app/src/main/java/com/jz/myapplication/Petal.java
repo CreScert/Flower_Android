@@ -5,10 +5,8 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.SweepGradient;
-import android.view.animation.PathInterpolator;
 
-import static com.jz.myapplication.FlowerUtils.log;
+import static com.jz.myapplication.FlowerUtils.degrad;
 import static com.jz.myapplication.FlowerUtils.setAlphaInt;
 
 /**
@@ -26,7 +24,7 @@ public class Petal {
     public Bloom bloom;
     public boolean isfinished;
 
-    public Petal(double stretchA, double stretchB, double startAngle, double angle, double growFactor, Bloom bloom, Canvas canvas) {
+    public Petal(double stretchA, double stretchB, double startAngle, double angle, double growFactor, Bloom bloom, Canvas canvas ) {
         this.stretchA = stretchA;
         this.stretchB = stretchB;
         this.startAngle = startAngle;
@@ -50,16 +48,17 @@ public class Petal {
         }
     }
 
-
     public void draw() {
 
+        if(null == canvas) return;
         Vector v1, v2, v3, v4;
-        v1 = new Vector(0, 1).rotate(Config.degrad(this.startAngle));
-        v2 = v1.clone().rotate(Config.degrad(this.angle));
+        v1 = new Vector(0, 1).rotate(degrad(this.startAngle));
+        v2 = v1.clone().rotate(degrad(this.angle));
         v3 = v1.clone().mult(this.stretchA * this.r); //.rotate(this.tanAngleA);
         v4 = v2.clone().mult(this.stretchB * this.r); //.rotate(this.tanAngleB);
-
         Paint paint = new Paint();
+        Path path = new Path();
+
 //        paint.setColor(Color.parseColor(this.bloom.color));
         paint.setStrokeWidth(10);
 
@@ -71,10 +70,9 @@ public class Petal {
         );
 
         paint.setShader(mSweepGradient);
-        Path path = new Path();
+
         path.moveTo(v1.x, v1.y);
         path.rCubicTo(v4.x, v4.y, v3.x, v3.y, v2.x, v2.y);
-
 
         canvas.drawPath(path, paint);
     }

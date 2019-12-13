@@ -4,6 +4,10 @@ import android.graphics.Canvas;
 
 import java.util.ArrayList;
 
+import static com.jz.myapplication.FlowerUtils.random;
+import static com.jz.myapplication.FlowerUtils.randomInt;
+
+
 /**
  * 花瓣类
  */
@@ -31,17 +35,19 @@ public class Bloom {
 
     private void init() {
         double angle = 360 / this.pc;
-        double startAngle = Config.randomInt(0, 90);
+
+        FlowerConfig flowerConfig = garden.getFlowerConfig();
+        double startAngle = randomInt(0, 90);
 
         for (int i = 0; i < this.pc; i++) {
                 this.petals.add(
                         new Petal(
-                                Config.random(Config.petalStretch.min, Config.petalStretch.max),
-                                Config.random(Config.petalStretch.min, Config.petalStretch.max),
+                                random(flowerConfig.petalStretch.min, flowerConfig.petalStretch.max),
+                                random(flowerConfig.petalStretch.min, flowerConfig.petalStretch.max),
 
                                 startAngle + i * angle    ,
                                 angle,
-                                Config.random(Config.growFactor.min, Config.growFactor.max),
+                                random(flowerConfig.growFactor.min, flowerConfig.growFactor.max),
 
                                 this,canvas));
         }
@@ -51,12 +57,12 @@ public class Bloom {
         for (int i = 0; i < this.pc; i++) {
             this.petals.add(
                     new Petal(
-                            Config.random(Config.petalStretch.min, Config.petalStretch.max),
-                            Config.random(Config.petalStretch.min, Config.petalStretch.max),
+                            random(flowerConfig.petalStretch.min, flowerConfig.petalStretch.max),
+                            random(flowerConfig.petalStretch.min, flowerConfig.petalStretch.max),
 
                             startAngle + i * angle    ,
                             angle,
-                            Config.random(Config.growFactor.min, Config.growFactor.max),
+                            random(flowerConfig.growFactor.min, flowerConfig.growFactor.max),
 
                             this,canvas));
         }

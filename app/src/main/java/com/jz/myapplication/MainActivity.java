@@ -17,8 +17,20 @@ public class MainActivity extends AppCompatActivity {
              @Override
              public void onClick(View v) {
                  RelativeLayout relativeLayout = findViewById(R.id.rl_parent);
-                 Flower flower = new Flower(MainActivity.this);
+                 final Flower flower = new Flower(MainActivity.this);
                  relativeLayout.addView(flower);
+
+
+                 flower.startHeartFlower();
+
+                 final Garden garden = flower.mGardens.get(0);
+                 garden.setOnBloomFinishListener(new Garden.OnBloomFinishListener() {
+                     @Override
+                     public void OnBloomFinish() {
+                         // 开始随机摆放花瓣
+                         flower.startPerFlow();
+                     }
+                 });
              }
          });
 
